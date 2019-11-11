@@ -16,7 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from . import views
+from django.conf.urls import url , include
+#from rest_framework.urlpatterns import format_suffix_patterns
+
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('articles.urls')),
     path('hello/',views.hello),
+    path('', include('restcheck.urls'))
 ]
